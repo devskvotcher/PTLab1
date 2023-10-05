@@ -1,0 +1,10 @@
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+.idea/
+.vscode/
+build/
+dist/
+*.egg-info/
+config.py
