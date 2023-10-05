@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-from src.Types import DataType
-from src.CalcRating import CalcRating
+import sys
+import os
+sys.path.append(os.path.abspath('src/'))
 import pytest
+from src.CalcRating import CalcRating
+from src.Types import DataType
 RatingsType = dict[str, float]
 
 
