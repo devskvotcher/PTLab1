@@ -32,7 +32,7 @@ def print_table(students: dict[str, float], title: str):
     print("ФИО               | Средний балл")
     print("------------------|-------------")
     for student, rating in students.items():
-        print(f"{student: <18} | {rating:.2f}")
+        print(f"{student: <18} | {rating: .2f}")
 
 
 def main():
@@ -47,14 +47,14 @@ def main():
 
     students = reader.read(path)
 
+    reader.pretty_print(students)
+
     rating_calculator = CalcRating(students)
     ratings = rating_calculator.calc()
 
-    print_table(ratings, "Все студенты и их рейтинги")
-
     analyzer = QuartileAnalyzer(students)
-    students_in_second_quartile = analyzer.find_students_in_second_quartile(
-        ratings)
+    students_in_second_quartile = \
+        analyzer.find_students_in_second_quartile(ratings)
 
     print_table(students_in_second_quartile, "Студенты во второй квартили")
 

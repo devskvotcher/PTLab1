@@ -21,15 +21,12 @@ def yaml_reader():
 
 
 def test_read_correct_data(yaml_reader):
-    # Используем mock_open, чтобы сымитировать чтение файла
     m = mock_open(read_data=yaml_example)
     m.return_value.__iter__ = lambda self: self
     m.return_value.__next__ = lambda self: next(iter(self.readline, ''))
 
-    # Патчим встроенную функцию open, чтобы использовать нашу имитацию чтения
-    # файла
     with patch("builtins.open", m, create=True):
         result = yaml_reader.read("dummy_path")
 
     assert result == expected_output, f"Expected \
-    {expected_output}, got {result}"
+        {expected_output}, got {result}"

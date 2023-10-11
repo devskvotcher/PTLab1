@@ -20,3 +20,21 @@ class TextDataReader(DataReader):
                     self.students[self.key].append(
                         (subj.strip(), int(score.strip())))
             return self.students
+
+    def pretty_print(self, data: DataType):
+        # Определение максимальной длины строки для колонок
+        max_name_length = max(len(name) for name in data.keys())
+        max_subject_length = max(len(subject) for grades in
+                                 data.values() for
+                                 subject, _ in grades)
+
+        # Вывод данных в табличном формате
+        print(f"{'Name': <{max_name_length}} | \
+              {'Subject': <{max_subject_length}} | Score")
+        # Добавим разделительную линию
+        print("-" * (max_name_length + max_subject_length + 15))
+
+        for name, grades in data.items():
+            for subject, score in grades:
+                print(f"{name: <{max_name_length}} | \
+                      {subject: <{max_subject_length}} | {score}")
