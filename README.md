@@ -283,14 +283,14 @@ def test_get_path_from_noncorrect_arguments(noncorrect_arguments_string:
     assert e.type == SystemExit
 
 ```
-#### Работа кода ветки XMLReader
-![program_result](/images/program_result.PNG)
+#### Работа кода ветки YAMLReader
+![program_result](/images/program_result.png)
 #### Проверка кода прошла успешно
-![test](/images/tests_result.PNG)
+![test](/images/tests_result.png)
 #### Структура файлов проекта
-![structure](/images/structure.PNG)
+![structure](/images/structure.png)
 #### UML-диаграмма
-![UML-diagram](/images/UML.PNG)
+![UML-diagram](/images/UML.png)
 #### Пакеты:
 - pytest - тестирование
 - mypy - корректность работы с типами
